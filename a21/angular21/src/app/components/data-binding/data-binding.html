@@ -1,0 +1,23 @@
+<p>data-binding works!</p>
+
+<table>
+    <tr>
+        <td>
+            {{courseName}}
+        </td>
+        <td>
+            {{productPrice}}
+        </td>
+    </tr>
+</table>
+
+<input [type]="dataType" [max]="5"/>
+<button (click)="showWelcomeMsg()">welcome</button>
+
+<select (change)="onCityChange()">
+    <option value="">Pune</option>
+    <option value="">Nagpur</option>
+    <option value="">Mumbai</option>
+</select>
+
+<input type="text" [(ngModel)]="courseName"/>
