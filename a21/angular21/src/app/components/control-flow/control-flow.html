@@ -1,0 +1,73 @@
+<table>
+    @if(isParaVisible === true){
+        <p>Simple para</p>
+    }
+    @else {
+        <h3>isParaVisible is false</h3>
+    }
+    <tr><td><button (click)="showP()">Show P</button></td></tr>
+    <tr><td><button (click)="hideP()">Hide P</button></td></tr>
+
+    <tr>
+        <td>
+            @if(startMonthName == 'jan') {
+                <span>January</span>
+            }
+            @else if(startMonthName == 'feb') {
+                <span>February</span>
+            }
+            @else if(startMonthName == 'mar') {
+                <span>March</span>
+            }
+            @else {
+                <span>Wrong input</span>
+            }
+        </td>
+    </tr>
+
+    <td>
+        <input type="text" [(ngModel)]="startMonthName">
+    </td>
+
+    <tr>
+        <td>
+            @for(item of cities; track $index) {
+            <tr>
+               <td> 
+                    {{item}}
+                 </td>
+            </tr>
+            }
+        </td>
+    </tr>
+
+    <tr>
+        <thead>
+            <tr>
+                <th>Sr. No</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for(item of studentsList; track $index){
+                <tr>
+                    <td>{{$index+1}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.city}}</td>
+                    <td>
+                        @if(item.isActive) {
+                            <h5>Active</h5>
+                        }
+                        @else {
+                            <h5>Non-active</h5>
+                        }
+                        
+                </tr>    
+            }
+            
+        </tbody>
+    </tr>
+    
+</table>
