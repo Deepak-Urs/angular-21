@@ -6,6 +6,7 @@ import './App.css'
 import User from './components/User'
 import Admin from './components/Admin'
 import CityMaster from './components/CityMaster'
+import DataEventBinding from './components/DataEventBinding'
 
 function App() {
   return (
@@ -16,6 +17,8 @@ function App() {
       <Admin />
       <br/>
       <CityMaster />
+      <br />
+      <DataEventBinding />
     </>
   )
 }
