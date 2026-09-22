@@ -9,6 +9,14 @@ function UseStates() {
     const [cityList, setCityList] = useState<string[]>(['Pune', 'Mysuru']);
     const [cityName, setCityName] = useState<string>('');
 
+    const [students, setStudents] = useState<Istudent>(
+        {
+            name: 'Deepak',
+            city: 'Mysuru',
+            isActive: false,
+        }
+    );
+
     const changeCourseName = () => {
         courseName = "Angular";
     }
@@ -37,7 +45,20 @@ function UseStates() {
         setCityList(['a', 'b', 'c']);
     }
 
+    const changeName = (event: any) => {
+        setStudents(oldData => ({ ...oldData, name: event.target.value }));
+    }
+
+    const changeCity = (event: any) => {
+        setStudents(oldData => ({ ...oldData, city: event.target.value }));
+    }
+
     return <>
+
+        <input type="text" placeholder="Name" onChange={(eve) => changeName(eve)}/>
+        <input type="text" placeholder="City" onChange={(eve) => changeCity(eve)}/>
+        <p>{students.name} -- {students.city}</p>
+
         <p>{cityList}</p>
         <h1>Course Name: {courseName}</h1>
         <br></br>
@@ -63,3 +84,9 @@ function UseStates() {
 }
 
 export default UseStates;
+
+interface Istudent {
+    name: string,
+    city: string, 
+    isActive: boolean
+}
