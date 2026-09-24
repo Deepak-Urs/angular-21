@@ -1,8 +1,12 @@
 import { useNavigate } from "react-router";
+import MyList from "../reusableComponents/MyList";
+import MyAlerts from "../reusableComponents/MyAlerts";
+import { useState } from "react";
 
 const List = () => {
     const cityList = ['P','M','Y','N','My']
     const navigate = useNavigate();
+    const [toggleAlert, setToggleAlert] = useState<boolean>(false);
 
     const studentList: Istudent[] = [
         {name: "AA", city: "Mys", state: "KA"},
@@ -19,8 +23,20 @@ const List = () => {
         navigate(-1);
     }
 
+    const changeToggleAlert = () => {
+        setToggleAlert(!toggleAlert);
+    }
+
     return (<>
         <h2> Lists </h2>
+        <div className="col-3">
+            <button onClick={changeToggleAlert}>Toggle Alert</button>
+            {toggleAlert === true && <MyAlerts alertType="success"/>}
+        </div>
+        <div className="col-3">
+            <p>*--Props List--*</p>
+            <MyList listItem={cityList}/>
+        </div>
         <div className="row">
             <div className="col-3">
                 <button onClick={navigateToDataBinding}>Navigate to Data Binding</button>
