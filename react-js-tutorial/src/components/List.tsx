@@ -1,5 +1,8 @@
+import { useNavigate } from "react-router";
+
 const List = () => {
     const cityList = ['P','M','Y','N','My']
+    const navigate = useNavigate();
 
     const studentList: Istudent[] = [
         {name: "AA", city: "Mys", state: "KA"},
@@ -8,9 +11,32 @@ const List = () => {
         {name: "DD", city: "Man", state: "KA"}
     ];
 
+    const navigateToDataBinding = () => {
+        navigate('/data-event-binding')
+    }
+
+    const navigateToPrevPage = () => {
+        navigate(-1);
+    }
+
     return (<>
         <h2> Lists </h2>
         <div className="row">
+            <div className="col-3">
+                <button onClick={navigateToDataBinding}>Navigate to Data Binding</button>
+            </div>
+            <br/>
+            <div className="col-3">
+                <button onClick={navigateToPrevPage}>Navigate to Previous Page</button>
+            </div>
+            
+            <br/>
+            <div className="col-3">
+                <button onClick={() => navigate('/user/1')}>Navigate to User-1 Page</button>
+            </div>
+            <div className="col-3">
+                <button onClick={() => navigate('/user/2')}>Navigate to User-2 Page</button>
+            </div>
             <div className="col-2">
                 <ol>
                     {

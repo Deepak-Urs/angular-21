@@ -5,6 +5,8 @@ import List from './components/List'
 import UseEffects from './components/UseEffects'
 import UseStates from './components/UseStates'
 import DataEventBinding from './components/DataEventBinding'
+import User from './components/User'
+import NotFound from './components/NotFound'
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
           <li><Link className="nav-link" to={'/use-states'}> Use States</Link></li>
           <li><Link className="nav-link" to={'/conditional-render'}> Conditional Render</Link></li>
           <li><Link className="nav-link" to={'/list'}> Lists</Link></li>
+          <li><Link className="nav-link" to={'/user'}> User</Link></li>
           
         </ul>
       </div>
@@ -33,9 +36,11 @@ function App() {
         <Route path='/' element={<DataEventBinding/>}/>
         <Route path='/data-event-binding' element={<DataEventBinding/>}/>
         <Route path='/use-effect' element={<UseEffects/>}/>
-        <Route path='/use-state' element={<UseStates/>}/> 
+        <Route path='/use-states' element={<UseStates/>}/> 
         <Route path='/conditional-render' element={<ConditionalRender/>}/>
         <Route path='/list' element={<List/>}/>
+        <Route path='/user/:userId' element={<User/>}/>
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
       {/*<ConditionalRender />*/}
       
