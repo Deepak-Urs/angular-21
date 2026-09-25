@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 const GetApi = () => {
     const [userList, setUserList] = useState([]);
     const [vendorsList, setVendorsList] = useState([]);
+    const [postsList, setPostsList] = useState<any>([]);
 
     const getAllUsers = async() => {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -15,7 +17,14 @@ const GetApi = () => {
     const getVendors = async () => {
         const response = await fetch("https://api.freeprojectapi.com/api/BusBooking/GetBusVendors");
         const vendors = await response.json();
+        console.log('incoming vendors', vendors);
         setVendorsList(vendors)
+    }
+
+    const getAllPosts = async () => {
+        const result = await axios.get("https://jsonplaceholder.typicode.com/albums");
+        console.log('incoming album posts', result);
+        setPostsList(result.data);
     }
 
     useEffect(() => {
@@ -25,6 +34,10 @@ const GetApi = () => {
 
     useEffect(() => {
         getVendors();
+    }, []);
+
+    useEffect(() => {
+        getAllPosts();
     }, []);
 
    
@@ -70,6 +83,17 @@ const GetApi = () => {
                     
                 </table>
             </div>
+
+            <div className="col-3">
+                <ul>
+                    {
+                        postsList.map((post: any) => {
+                            return <li>{post.title}</li>
+                        })
+                    }
+                </ul>
+            </div>
+
         </div>
     </>)
 }
