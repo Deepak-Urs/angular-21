@@ -2,6 +2,7 @@ import { useNavigate } from "react-router";
 import MyList from "../reusableComponents/MyList";
 import MyAlerts from "../reusableComponents/MyAlerts";
 import { useState } from "react";
+import MyListGroup from "../reusableComponents/MyListGroup";
 
 const List = () => {
     const cityList = ['P','M','Y','N','My']
@@ -27,8 +28,15 @@ const List = () => {
         setToggleAlert(!toggleAlert);
     }
 
+    const getSelectedItem = (itemName: string) => {
+        alert(itemName);
+    }
+ 
     return (<>
         <h2> Lists </h2>
+        <div className="col">
+            <MyListGroup arry={cityList} onSelectItem={getSelectedItem}/>
+        </div>
         <div className="col-3">
             <button onClick={changeToggleAlert}>Toggle Alert</button>
             {toggleAlert === true && <MyAlerts alertType="success"/>}

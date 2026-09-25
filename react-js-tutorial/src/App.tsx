@@ -7,6 +7,7 @@ import UseStates from './components/UseStates'
 import DataEventBinding from './components/DataEventBinding'
 import User from './components/User'
 import NotFound from './components/NotFound'
+import GetApi from './components/GetApi'
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <li><Link className="nav-link" to={'/conditional-render'}> Conditional Render</Link></li>
           <li><Link className="nav-link" to={'/list'}> Lists</Link></li>
           <li><Link className="nav-link" to={'/user'}> User</Link></li>
+          <li><Link className="nav-link" to={'/get-api'}> Get-API</Link></li>
           
         </ul>
       </div>
@@ -40,6 +42,7 @@ function App() {
         <Route path='/conditional-render' element={<ConditionalRender/>}/>
         <Route path='/list' element={<List/>}/>
         <Route path='/user/:userId' element={<User/>}/>
+        <Route path='/get-api' element={<GetApi/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       {/*<ConditionalRender />*/}
