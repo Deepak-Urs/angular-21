@@ -9,6 +9,7 @@ import User from './components/User'
 import NotFound from './components/NotFound'
 import GetApi from './components/GetApi'
 import PostApi from './components/PostApi'
+import CrudApis from './components/CrudApis'
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <li><Link className="nav-link" to={'/user'}> User</Link></li>
           <li><Link className="nav-link" to={'/get-api'}> Get-API</Link></li>
           <li><Link className="nav-link" to={'/post-api'}> Post-API</Link></li>
+          <li><Link className="nav-link" to={'/crud'}> CRUD-APIs</Link></li>
           
         </ul>
       </div>
@@ -46,7 +48,9 @@ function App() {
         <Route path='/user/:userId' element={<User/>}/>
         <Route path='/get-api' element={<GetApi/>}/>
         <Route path='/post-api' element={<PostApi/>}/>
+        <Route path='/crud' element={<CrudApis />} />
         <Route path='*' element={<NotFound/>}/>
+
       </Routes>
       {/*<ConditionalRender />*/}
       
