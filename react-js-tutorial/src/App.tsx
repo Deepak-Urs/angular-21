@@ -8,6 +8,7 @@ import DataEventBinding from './components/DataEventBinding'
 import User from './components/User'
 import NotFound from './components/NotFound'
 import GetApi from './components/GetApi'
+import PostApi from './components/PostApi'
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <li><Link className="nav-link" to={'/list'}> Lists</Link></li>
           <li><Link className="nav-link" to={'/user'}> User</Link></li>
           <li><Link className="nav-link" to={'/get-api'}> Get-API</Link></li>
+          <li><Link className="nav-link" to={'/post-api'}> Post-API</Link></li>
           
         </ul>
       </div>
@@ -43,6 +45,7 @@ function App() {
         <Route path='/list' element={<List/>}/>
         <Route path='/user/:userId' element={<User/>}/>
         <Route path='/get-api' element={<GetApi/>}/>
+        <Route path='/post-api' element={<PostApi/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
       {/*<ConditionalRender />*/}

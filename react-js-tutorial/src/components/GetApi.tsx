@@ -10,7 +10,7 @@ const GetApi = () => {
         const response = await fetch("https://jsonplaceholder.typicode.com/users");
         const userList = await response.json();
         console.log('incoming userList', userList);
-        
+         
         setUserList(userList);
     }
 
