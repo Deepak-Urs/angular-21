@@ -1,32 +1,40 @@
+import MyAccordion from "../reusableComponents/MyAccordion";
+interface itemsListModel {
+    title: string,
+    content: string
+}
+
 function DataEventBinding() {
-    const courseName = 'React';
-    const stateName = 'mh';
-    const div1ClassName = "primary";
-    const myCss = {
-        'background-color': 'green',
-        'width': '200px',
-        'height': '200px'
-    }
-    const showWelcomeTest = () => {
-        alert("Welcome to react!")
-    }
+    const itemsList : itemsListModel[] = [{title: 'A', content: 'aa'},{title: 'B', content: 'bb'},{title: 'C', content: 'cc'},{title: 'D', content: 'dd'}];
+    //const courseName = 'React';
+    //const stateName = 'mh';
+    //const div1ClassName = "primary";
+    //const myCss = {
+    //    'background-color': 'green',
+    //    'width': '200px',
+    //    'height': '200px'
+    //}
+    //const showWelcomeTest = () => {
+    //    alert("Welcome to react!")
+    //}
 
-    const onStateChangeSelect = () => {
-        alert(`on State changes seen, you've chosen ${stateName}`);
-    }
+    //const onStateChangeSelect = () => {
+    //    alert(`on State changes seen, you've chosen ${stateName}`);
+    //}
 
-    const onMouseEnter = () => {
-        console.log("Mose has ENTERED the area");
+    //const onMouseEnter = () => {
+    //    console.log("Mose has ENTERED the area");
         
-    }
+    //}
 
-    const onMouseLeave = () => {
-        console.log("Mose has LEFT the area");
+    //const onMouseLeave = () => {
+    //    console.log("Mose has LEFT the area");
         
-    }
+    //}
 
     return <div>
-        <p>CourseName - {courseName}</p>
+        <MyAccordion data={itemsList}/>
+        {/*<p>CourseName - {courseName}</p>
         <span> {courseName }</span>
         <input type="text" value={courseName} />
         <br />
@@ -45,7 +53,7 @@ function DataEventBinding() {
 
         <div style={myCss} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}></div>
 
-        <button onClick={showWelcomeTest}>Show Welcome!</button>
+        <button onClick={showWelcomeTest}>Show Welcome!</button>*/}
     </div>
 }
 
