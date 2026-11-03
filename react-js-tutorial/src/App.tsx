@@ -17,48 +17,6 @@ function App() {
     <>
 
 
-    <nav className="navbar navbar-default">
-      <div className="container-fluid">
-        <div className="navbar-header">
-          <a className="navbar-brand" href="#">WebSiteName</a>
-        </div>
-        <ul className="nav navbar-nav">
-          <li><Link className="nav-link" to={'/'}> Home </Link></li>
-          <li><Link className="nav-link" to={'/data-event-binding'}> Data Binding</Link></li>
-          <li><Link className="nav-link" to={'/use-effects'}>Use Effects</Link></li>
-          <li><Link className="nav-link" to={'/use-states'}> Use States</Link></li>
-          <li><Link className="nav-link" to={'/conditional-render'}> Conditional Render</Link></li>
-          <li><Link className="nav-link" to={'/list'}> Lists</Link></li>
-          <li><Link className="nav-link" to={'/user'}> User</Link></li>
-          <li><Link className="nav-link" to={'/get-api'}> Get-API</Link></li>
-          <li><Link className="nav-link" to={'/post-api'}> Post-API</Link></li>
-          <li><Link className="nav-link" to={'/crud'}> CRUD-APIs</Link></li>
-          
-        </ul>
-      </div>
-    </nav>
-      
-      <Routes>
-        <Route path='/' element={<DataEventBinding/>}/>
-        <Route path='/data-event-binding' element={<DataEventBinding/>}/>
-        <Route path='/use-effect' element={<UseEffects/>}/>
-        <Route path='/use-states' element={<UseStates/>}/> 
-        <Route path='/conditional-render' element={<ConditionalRender/>}/>
-        <Route path='/list' element={<List/>}/>
-        <Route path='/user/:userId' element={<User/>}/>
-        <Route path='/get-api' element={<GetApi/>}/>
-        <Route path='/post-api' element={<PostApi/>}/>
-        <Route path='/crud' element={<CrudApis />} />
-        <Route path='*' element={<NotFound/>}/>
-
-      </Routes>
-      {/*<ConditionalRender />*/}
-      
-      {/*<UseEffects />*/}
-      {/*<UseStates />*/}
-
-      {/*<h1>Hello React!</h1>
-      < List />*/}
     </>
   )
 }
