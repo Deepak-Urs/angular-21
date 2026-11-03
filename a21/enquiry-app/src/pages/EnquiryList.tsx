@@ -1,7 +1,7 @@
 function EnquiryList() {
   return (
     <div>
-      
+      EnquiryList
     </div>
   )
 }

@@ -1,7 +1,7 @@
 const CategoryMaster = () => {
   return (
     <div>
-      
+      CategoryMaster
     </div>
   )
 }

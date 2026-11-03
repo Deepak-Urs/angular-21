@@ -1,7 +1,7 @@
 const StatusMaster = () => {
   return (
     <div>
-      
+      StatusMaster
     </div>
   )
 }
