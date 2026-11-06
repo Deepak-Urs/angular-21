@@ -182,3 +182,25 @@
     border-right-color: var(--border);
   }
 }
+
+.striked-text {
+  text-decoration:line-through; 
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.outer {
+  border: 1px solid black;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 10px 5px;
+}
+
+.inner {
+  background-color: green;
+  text-align: right;
+  transition: 0.5s ease-in;
+}

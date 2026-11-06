@@ -6,6 +6,8 @@ import NewEnquiryForm from './pages/NewEnquiryForm'
 import EnquiryList from './pages/EnquiryList'
 import Accordion from './pages/Accordion'
 import Chips from './pages/Chips'
+import ToDoList from './pages/ToDoList'
+import ProgressBar from './pages/ProgressBar'
 
 function App() {
 
@@ -24,6 +26,8 @@ function App() {
           <li className="nav-item"><Link className="nav-link active" to={'/category'}>Category</Link></li>
           <li className="nav-item"><Link className="nav-link active" to={'/accordion'}>Accordion</Link></li>
           <li className="nav-item"><Link className="nav-link active" to={'/chips'}>Chips</Link></li>
+          <li className="nav-item"><Link className="nav-link active" to={'/todo'}>ToDo List</Link></li>
+          <li className="nav-item"><Link className="nav-link active" to={'/progress'}>Progress Bar</Link></li>
         </ul>
         <form className="d-flex gap-2" action="/action_page.php">
           <input type="search" className="form-control" placeholder="Search" name="search" />
@@ -41,6 +45,8 @@ function App() {
         <Route path='enquiry-list' element={<EnquiryList />} />
         <Route path='accordion' element={<Accordion />} />
         <Route path='chips' element={<Chips />} />
+        <Route path='todo' element={<ToDoList />} />
+        <Route path='progress' element={<ProgressBar />} />
      </Routes>
     </>
   )
