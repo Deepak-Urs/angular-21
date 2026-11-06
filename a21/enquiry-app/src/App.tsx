@@ -4,6 +4,8 @@ import { Link, Route, Routes } from 'react-router-dom'
 import StatusMaster from './pages/StatusMaster'
 import NewEnquiryForm from './pages/NewEnquiryForm'
 import EnquiryList from './pages/EnquiryList'
+import Accordion from './pages/Accordion'
+import Chips from './pages/Chips'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
           <li className="nav-item"><Link className="nav-link active" to={'/status'}>Status</Link></li>
           <li className="nav-item"><Link className="nav-link active" to={'/enquiry-list'}>Enquiry List</Link></li>
           <li className="nav-item"><Link className="nav-link active" to={'/category'}>Category</Link></li>
+          <li className="nav-item"><Link className="nav-link active" to={'/accordion'}>Accordion</Link></li>
+          <li className="nav-item"><Link className="nav-link active" to={'/chips'}>Chips</Link></li>
         </ul>
         <form className="d-flex gap-2" action="/action_page.php">
           <input type="search" className="form-control" placeholder="Search" name="search" />
@@ -35,6 +39,8 @@ function App() {
         <Route path='status' element={<StatusMaster />} />
         <Route path='new-enquiry' element={<NewEnquiryForm />} />
         <Route path='enquiry-list' element={<EnquiryList />} />
+        <Route path='accordion' element={<Accordion />} />
+        <Route path='chips' element={<Chips />} />
      </Routes>
     </>
   )
